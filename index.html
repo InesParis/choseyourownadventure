@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Visit the Future Adventure</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -18,8 +18,9 @@
     </style>
   </head>
   <body class="container mt-5">
-    <h1 class="text-center">Visiting the future in concrete ways</h1>
+    <h1 class="text-center">Visiting the Future in Concrete Ways</h1>
 
+    <!-- Step 1 -->
     <div id="question1" class="question active">
       <h3>Would you like to visit the future?</h3>
       <button
@@ -36,78 +37,212 @@
       </button>
     </div>
 
+    <!-- Step 2 -->
     <div id="yesQuestion" class="question">
-      <h3>Great! Do you prefer the mountains or the beach?</h3>
+      <h3>Pick your lens for the future:</h3>
       <button
         class="btn btn-primary"
-        onclick="nextQuestion('yesQuestion', 'mountains')"
+        onclick="nextQuestion('yesQuestion', 'utopia')"
       >
-        I envission the future in a way that humanity has overcome the climate
-        crisis and is thriving in new ways of relating with the environment
+        🌿 A Utopian world
       </button>
       <button
         class="btn btn-secondary"
-        onclick="nextQuestion('yesQuestion', 'beach')"
+        onclick="nextQuestion('yesQuestion', 'dystopia')"
       >
-        The future looks stressful and chaotic, but I would like to visit it
-        anyway to find solutions to those issues
+        🔥 A Chaotic Future
       </button>
     </div>
 
     <div id="noQuestion" class="question">
-      <h3>That's okay! Would you like to relax at home or read a book?</h3>
+      <h3>Staying in the present is fine. Pick an activity:</h3>
       <button
         class="btn btn-primary"
-        onclick="nextQuestion('noQuestion', 'home')"
+        onclick="nextQuestion('noQuestion', 'book')"
       >
-        Home
+        📖 Read Speculative Fiction
       </button>
       <button
         class="btn btn-secondary"
-        onclick="nextQuestion('noQuestion', 'book')"
+        onclick="nextQuestion('noQuestion', 'sketch')"
       >
-        Read a Book
+        🎨 Draw Your Vision of Tomorrow
       </button>
     </div>
 
+    <!-- Step 3 -->
+    <div id="utopiaPath" class="question">
+      <h3>You're in a flourishing future. Choose a domain to explore:</h3>
+      <button
+        class="btn btn-primary"
+        onclick="nextQuestion('utopiaPath', 'enviro')"
+      >
+        🌎 Environment & Regeneration
+      </button>
+      <button
+        class="btn btn-secondary"
+        onclick="nextQuestion('utopiaPath', 'culture')"
+      >
+        🎭 Culture & Creativity
+      </button>
+    </div>
+
+    <div id="dystopiaPath" class="question">
+      <h3>The future is messy. How do you prepare?</h3>
+      <button
+        class="btn btn-primary"
+        onclick="nextQuestion('dystopiaPath', 'ai')"
+      >
+        🤖 Learn from AI & Automation
+      </button>
+      <button
+        class="btn btn-secondary"
+        onclick="nextQuestion('dystopiaPath', 'crisis')"
+      >
+        🛠️ Face Climate Crisis Head-On
+      </button>
+    </div>
+
+    <!-- Step 4 -->
+    <div id="enviro" class="question">
+      <h3>You join an urban foresting collective. What do you plant?</h3>
+      <button class="btn btn-primary" onclick="nextQuestion('enviro', 'hope')">
+        🍒 Fruit Trees of Hope
+      </button>
+      <button
+        class="btn btn-secondary"
+        onclick="nextQuestion('enviro', 'wild')"
+      >
+        🌲 Wild Forests for All
+      </button>
+    </div>
+
+    <div id="culture" class="question">
+      <h3>You enter a future art gallery. Which room?</h3>
+      <button
+        class="btn btn-primary"
+        onclick="nextQuestion('culture', 'butler')"
+      >
+        📚 Octavia Butler Hall
+      </button>
+      <button
+        class="btn btn-secondary"
+        onclick="nextQuestion('culture', 'gibson')"
+      >
+        💾 Cyberpunk Archive
+      </button>
+    </div>
+
+    <div id="ai" class="question">
+      <h3>You meet a sentient AI consultant. What's your question?</h3>
+      <button class="btn btn-primary" onclick="nextQuestion('ai', 'ethics')">
+        ⚖️ Ethics in AI
+      </button>
+      <button class="btn btn-secondary" onclick="nextQuestion('ai', 'merge')">
+        🧬 Merge or Compete?
+      </button>
+    </div>
+
+    <div id="crisis" class="question">
+      <h3>You lead a resilience hub. What do you teach first?</h3>
+      <button class="btn btn-primary" onclick="nextQuestion('crisis', 'water')">
+        💧 Water Systems
+      </button>
+      <button
+        class="btn btn-secondary"
+        onclick="nextQuestion('crisis', 'community')"
+      >
+        🤝 Community Leadership
+      </button>
+    </div>
+
+    <!-- Step 5: Endings -->
+    <div id="hope" class="question">
+      <h3>
+        Your orchard thrives. Future generations celebrate the shade of trees
+        you planted. 🍒🌳
+      </h3>
+    </div>
+
+    <div id="wild" class="question">
+      <h3>
+        Wild forests reclaim the city. Nature becomes your greatest teacher.
+        🌲🏙️
+      </h3>
+    </div>
+
+    <div id="butler" class="question">
+      <h3>
+        You sit with Octavia Butler's ideas. You leave with visions of just
+        futures. 📖✨
+      </h3>
+    </div>
+
+    <div id="gibson" class="question">
+      <h3>
+        Neon dreams and fractured realities — welcome to your cyber future. 💻🌃
+      </h3>
+    </div>
+
+    <div id="ethics" class="question">
+      <h3>
+        The AI questions you back. Together you design a world of aligned
+        intelligence. 🤖💬
+      </h3>
+    </div>
+
+    <div id="merge" class="question">
+      <h3>
+        You upload part of your consciousness. You're not alone anymore. 🧠🔗
+      </h3>
+    </div>
+
+    <div id="water" class="question">
+      <h3>
+        Your solar desalinator saves hundreds. You become a clean water pioneer.
+        💧☀️
+      </h3>
+    </div>
+
+    <div id="community" class="question">
+      <h3>
+        Your hub is known for radical care and courage. People gather to
+        rebuild. 🤝🏡
+      </h3>
+    </div>
+
+    <div id="book" class="question">
+      <h3>
+        You open "Kindred" by Octavia Butler. The future visits you instead.
+        📚💡
+      </h3>
+    </div>
+
+    <div id="sketch" class="question">
+      <h3>
+        Your sketch of a post-carbon city inspires your next team strategy. 🎨📈
+      </h3>
+    </div>
+
     <script>
-      function nextQuestion(currentQuestion, answer) {
-        document.getElementById(currentQuestion).classList.remove("active");
-        let nextQuestionId = "";
+      function nextQuestion(current, answer) {
+        document.getElementById(current).classList.remove("active");
 
-        if (currentQuestion === "question1") {
-          nextQuestionId = answer === "yes" ? "yesQuestion" : "noQuestion";
-        } else if (currentQuestion === "yesQuestion") {
-          nextQuestionId =
-            answer === "mountains" ? "text-mountains" : "text-beach";
-        } else if (currentQuestion === "noQuestion") {
-          nextQuestionId = answer === "home" ? "text-home" : "text-book";
-        }
+        const map = {
+          question1: { yes: "yesQuestion", no: "noQuestion" },
+          yesQuestion: { utopia: "utopiaPath", dystopia: "dystopiaPath" },
+          noQuestion: { book: "book", sketch: "sketch" },
+          utopiaPath: { enviro: "enviro", culture: "culture" },
+          dystopiaPath: { ai: "ai", crisis: "crisis" },
+          enviro: { hope: "hope", wild: "wild" },
+          culture: { butler: "butler", gibson: "gibson" },
+          ai: { ethics: "ethics", merge: "merge" },
+          crisis: { water: "water", community: "community" },
+        };
 
-        document.getElementById(nextQuestionId).classList.add("active");
+        const nextId = map[current]?.[answer];
+        if (nextId) document.getElementById(nextId).classList.add("active");
       }
     </script>
-
-    <div id="text-mountains" class="question">
-      <h3>
-        You chose the most hopeful outcome, it looks like you would love a
-        utopia
-      </h3>
-    </div>
-
-    <div id="text-beach" class="question">
-      <h3>
-        Distopian worlds can seem daunting but they will help you get ready for
-        what it may come
-      </h3>
-    </div>
-
-    <div id="text-home" class="question">
-      <h3>You chose to relax at home! Enjoy your time!</h3>
-    </div>
-
-    <div id="text-book" class="question">
-      <h3>You chose to read a book! Happy reading!</h3>
-    </div>
   </body>
 </html>
