@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      .question {
+        display: none;
+      }
+      .active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="container mt-5">
+    <h1 class="text-center">Choose Your Own Adventure</h1>
+
+    <div id="question1" class="question active">
+      <h3>Do you want to go on an adventure?</h3>
+      <button
+        class="btn btn-primary"
+        onclick="nextQuestion('question1', 'yes')"
+      >
+        Yes
+      </button>
+      <button
+        class="btn btn-secondary"
+        onclick="nextQuestion('question1', 'no')"
+      >
+        No
+      </button>
+    </div>
+
+    <div id="yesQuestion" class="question">
+      <h3>Great! Do you prefer the mountains or the beach?</h3>
+      <button
+        class="btn btn-primary"
+        onclick="nextQuestion('yesQuestion', 'mountains')"
+      >
+        Mountains
+      </button>
+      <button
+        class="btn btn-secondary"
+        onclick="nextQuestion('yesQuestion', 'beach')"
+      >
+        Beach
+      </button>
+    </div>
+
+    <div id="noQuestion" class="question">
+      <h3>That's okay! Would you like to relax at home or read a book?</h3>
+      <button
+        class="btn btn-primary"
+        onclick="nextQuestion('noQuestion', 'home')"
+      >
+        Home
+      </button>
+      <button
+        class="btn btn-secondary"
+        onclick="nextQuestion('noQuestion', 'book')"
+      >
+        Read a Book
+      </button>
+    </div>
+
+    <script>
+      function nextQuestion(currentQuestion, answer) {
+        document.getElementById(currentQuestion).classList.remove("active");
+        let nextQuestionId = "";
+
+        if (currentQuestion === "question1") {
+          nextQuestionId = answer === "yes" ? "yesQuestion" : "noQuestion";
+        } else if (currentQuestion === "yesQuestion") {
+          nextQuestionId =
+            answer === "mountains" ? "text-mountains" : "text-beach";
+        } else if (currentQuestion === "noQuestion") {
+          nextQuestionId = answer === "home" ? "text-home" : "text-book";
+        }
+
+        document.getElementById(nextQuestionId).classList.add("active");
+      }
+    </script>
+
+    <div id="text-mountains" class="question">
+      <h3>You chose the mountains! Get ready for a climb!</h3>
+    </div>
+
+    <div id="text-beach" class="question">
+      <h3>You chose the beach! Enjoy the sun and surf!</h3>
+    </div>
+
+    <div id="text-home" class="question">
+      <h3>You chose to relax at home! Enjoy your time!</h3>
+    </div>
+
+    <div id="text-book" class="question">
+      <h3>You chose to read a book! Happy reading!</h3>
+    </div>
+  </body>
+</html>
