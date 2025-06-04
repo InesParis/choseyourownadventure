@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Visit the Future Adventure</title>
+    <title>Visit the Future</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -15,12 +15,14 @@
       .active {
         display: block;
       }
+      .restart-btn {
+        margin-top: 20px;
+      }
     </style>
   </head>
   <body class="container mt-5">
     <h1 class="text-center">Visiting the Future in Concrete Ways</h1>
 
-    <!-- Step 1 -->
     <div id="question1" class="question active">
       <h3>Would you like to visit the future?</h3>
       <button
@@ -37,211 +39,240 @@
       </button>
     </div>
 
-    <!-- Step 2 -->
     <div id="yesQuestion" class="question">
-      <h3>Pick your lens for the future:</h3>
+      <h3>What kind of future are you curious about?</h3>
       <button
         class="btn btn-primary"
         onclick="nextQuestion('yesQuestion', 'utopia')"
       >
-        🌿 A Utopian world
+        A 🌿 regenerative world
       </button>
       <button
         class="btn btn-secondary"
-        onclick="nextQuestion('yesQuestion', 'dystopia')"
+        onclick="nextQuestion('yesQuestion', 'chaotic')"
       >
-        🔥 A Chaotic Future
+        A 🌪️ messy world full of innovation
       </button>
     </div>
 
     <div id="noQuestion" class="question">
-      <h3>Staying in the present is fine. Pick an activity:</h3>
+      <h3>No problem! Would you rather engage gently?</h3>
       <button
         class="btn btn-primary"
-        onclick="nextQuestion('noQuestion', 'book')"
+        onclick="nextQuestion('noQuestion', 'reflect')"
       >
-        📖 Read Speculative Fiction
+        🧘 Stay and reflect
       </button>
       <button
         class="btn btn-secondary"
-        onclick="nextQuestion('noQuestion', 'sketch')"
+        onclick="nextQuestion('noQuestion', 'imagine')"
       >
-        🎨 Draw Your Vision of Tomorrow
+        📚 Read a speculative fiction story
       </button>
     </div>
 
-    <!-- Step 3 -->
-    <div id="utopiaPath" class="question">
-      <h3>You're in a flourishing future. Choose a domain to explore:</h3>
+    <div id="utopiaQuestion" class="question">
+      <h3>In this future, what's most important?</h3>
       <button
         class="btn btn-primary"
-        onclick="nextQuestion('utopiaPath', 'enviro')"
+        onclick="nextQuestion('utopiaQuestion', 'forest')"
       >
-        🌎 Environment & Regeneration
+        🌳 Urban foresting & planetary care
       </button>
       <button
         class="btn btn-secondary"
-        onclick="nextQuestion('utopiaPath', 'culture')"
+        onclick="nextQuestion('utopiaQuestion', 'collab')"
       >
-        🎭 Culture & Creativity
+        🧑‍🤝‍🧑 Global collaboration & peace
       </button>
     </div>
 
-    <div id="dystopiaPath" class="question">
-      <h3>The future is messy. How do you prepare?</h3>
+    <div id="chaoticQuestion" class="question">
+      <h3>In this future, what's the biggest tension?</h3>
       <button
         class="btn btn-primary"
-        onclick="nextQuestion('dystopiaPath', 'ai')"
+        onclick="nextQuestion('chaoticQuestion', 'ai')"
       >
-        🤖 Learn from AI & Automation
+        🤖 AI ethics & power
       </button>
       <button
         class="btn btn-secondary"
-        onclick="nextQuestion('dystopiaPath', 'crisis')"
+        onclick="nextQuestion('chaoticQuestion', 'migration')"
       >
-        🛠️ Face Climate Crisis Head-On
+        🌍 Climate migration & adaptation
       </button>
     </div>
 
-    <!-- Step 4 -->
-    <div id="enviro" class="question">
-      <h3>You join an urban foresting collective. What do you plant?</h3>
-      <button class="btn btn-primary" onclick="nextQuestion('enviro', 'hope')">
-        🍒 Fruit Trees of Hope
-      </button>
-      <button
-        class="btn btn-secondary"
-        onclick="nextQuestion('enviro', 'wild')"
-      >
-        🌲 Wild Forests for All
-      </button>
-    </div>
-
-    <div id="culture" class="question">
-      <h3>You enter a future art gallery. Which room?</h3>
+    <div id="reflectQuestion" class="question">
+      <h3>What inspires your reflection most?</h3>
       <button
         class="btn btn-primary"
-        onclick="nextQuestion('culture', 'butler')"
+        onclick="nextQuestion('reflectQuestion', 'nature')"
       >
-        📚 Octavia Butler Hall
+        🍃 Being in nature
       </button>
       <button
         class="btn btn-secondary"
-        onclick="nextQuestion('culture', 'gibson')"
+        onclick="nextQuestion('reflectQuestion', 'people')"
       >
-        💾 Cyberpunk Archive
+        👥 Talking to others
       </button>
     </div>
 
-    <div id="ai" class="question">
-      <h3>You meet a sentient AI consultant. What's your question?</h3>
-      <button class="btn btn-primary" onclick="nextQuestion('ai', 'ethics')">
-        ⚖️ Ethics in AI
-      </button>
-      <button class="btn btn-secondary" onclick="nextQuestion('ai', 'merge')">
-        🧬 Merge or Compete?
-      </button>
-    </div>
-
-    <div id="crisis" class="question">
-      <h3>You lead a resilience hub. What do you teach first?</h3>
-      <button class="btn btn-primary" onclick="nextQuestion('crisis', 'water')">
-        💧 Water Systems
+    <div id="imagineQuestion" class="question">
+      <h3>Choose a speculative fiction genre:</h3>
+      <button
+        class="btn btn-primary"
+        onclick="nextQuestion('imagineQuestion', 'afrofuturism')"
+      >
+        ✨ Afrofuturism
       </button>
       <button
         class="btn btn-secondary"
-        onclick="nextQuestion('crisis', 'community')"
+        onclick="nextQuestion('imagineQuestion', 'cli-fi')"
       >
-        🤝 Community Leadership
+        🔥 Climate Fiction (Cli-Fi)
       </button>
     </div>
 
-    <!-- Step 5: Endings -->
-    <div id="hope" class="question">
+    <!-- Final Screens -->
+
+    <div id="text-forest" class="question">
       <h3>
-        Your orchard thrives. Future generations celebrate the shade of trees
-        you planted. 🍒🌳
+        🌳 You explore a future where cities breathe — forests on rooftops,
+        wildlife corridors between buildings, and communities living in sync
+        with ecosystems.
       </h3>
+      <button
+        class="btn btn-outline-dark restart-btn"
+        onclick="restartAdventure()"
+      >
+        🔁 Start Over
+      </button>
     </div>
 
-    <div id="wild" class="question">
+    <div id="text-collab" class="question">
       <h3>
-        Wild forests reclaim the city. Nature becomes your greatest teacher.
-        🌲🏙️
+        🧑‍🤝‍🧑 You step into a world held together by cross-cultural collaboration,
+        peacekeeping through storytelling, and global civic imagination.
       </h3>
+      <button
+        class="btn btn-outline-dark restart-btn"
+        onclick="restartAdventure()"
+      >
+        🔁 Start Over
+      </button>
     </div>
 
-    <div id="butler" class="question">
+    <div id="text-ai" class="question">
       <h3>
-        You sit with Octavia Butler's ideas. You leave with visions of just
-        futures. 📖✨
+        🤖 You enter a high-tech society grappling with AI governance, where
+        humans debate synthetic consciousness and robot civil rights.
       </h3>
+      <button
+        class="btn btn-outline-dark restart-btn"
+        onclick="restartAdventure()"
+      >
+        🔁 Start Over
+      </button>
     </div>
 
-    <div id="gibson" class="question">
+    <div id="text-migration" class="question">
       <h3>
-        Neon dreams and fractured realities — welcome to your cyber future. 💻🌃
+        🌍 You visit a future of resilience — mega-floating cities, climate
+        passports, and cultures reshaping identity through adaptation.
       </h3>
+      <button
+        class="btn btn-outline-dark restart-btn"
+        onclick="restartAdventure()"
+      >
+        🔁 Start Over
+      </button>
     </div>
 
-    <div id="ethics" class="question">
+    <div id="text-nature" class="question">
       <h3>
-        The AI questions you back. Together you design a world of aligned
-        intelligence. 🤖💬
+        🍃 You retreat to the forest where futures whisper through birdsong and
+        fungi — deep time thinking becomes your guide.
       </h3>
+      <button
+        class="btn btn-outline-dark restart-btn"
+        onclick="restartAdventure()"
+      >
+        🔁 Start Over
+      </button>
     </div>
 
-    <div id="merge" class="question">
+    <div id="text-people" class="question">
       <h3>
-        You upload part of your consciousness. You're not alone anymore. 🧠🔗
+        👥 You join a conversation circle where stories from multiple
+        generations shape your perspective on what's next.
       </h3>
+      <button
+        class="btn btn-outline-dark restart-btn"
+        onclick="restartAdventure()"
+      >
+        🔁 Start Over
+      </button>
     </div>
 
-    <div id="water" class="question">
+    <div id="text-afrofuturism" class="question">
       <h3>
-        Your solar desalinator saves hundreds. You become a clean water pioneer.
-        💧☀️
+        ✨ You discover Octavia Butler-inspired worlds — resistance as ritual,
+        liberation through imagination, and ancestral technologies.
       </h3>
+      <button
+        class="btn btn-outline-dark restart-btn"
+        onclick="restartAdventure()"
+      >
+        🔁 Start Over
+      </button>
     </div>
 
-    <div id="community" class="question">
+    <div id="text-cli-fi" class="question">
       <h3>
-        Your hub is known for radical care and courage. People gather to
-        rebuild. 🤝🏡
+        🔥 You dive into a world shaped by rising tides and innovation —
+        underground farms, ocean wind grids, and bioregional politics.
       </h3>
-    </div>
-
-    <div id="book" class="question">
-      <h3>
-        You open "Kindred" by Octavia Butler. The future visits you instead.
-        📚💡
-      </h3>
-    </div>
-
-    <div id="sketch" class="question">
-      <h3>
-        Your sketch of a post-carbon city inspires your next team strategy. 🎨📈
-      </h3>
+      <button
+        class="btn btn-outline-dark restart-btn"
+        onclick="restartAdventure()"
+      >
+        🔁 Start Over
+      </button>
     </div>
 
     <script>
-      function nextQuestion(current, answer) {
-        document.getElementById(current).classList.remove("active");
+      function nextQuestion(currentId, answer) {
+        document.getElementById(currentId).classList.remove("active");
+        let nextId = "";
 
-        const map = {
+        const transitions = {
           question1: { yes: "yesQuestion", no: "noQuestion" },
-          yesQuestion: { utopia: "utopiaPath", dystopia: "dystopiaPath" },
-          noQuestion: { book: "book", sketch: "sketch" },
-          utopiaPath: { enviro: "enviro", culture: "culture" },
-          dystopiaPath: { ai: "ai", crisis: "crisis" },
-          enviro: { hope: "hope", wild: "wild" },
-          culture: { butler: "butler", gibson: "gibson" },
-          ai: { ethics: "ethics", merge: "merge" },
-          crisis: { water: "water", community: "community" },
+          yesQuestion: { utopia: "utopiaQuestion", chaotic: "chaoticQuestion" },
+          noQuestion: {
+            reflect: "reflectQuestion",
+            imagine: "imagineQuestion",
+          },
+          utopiaQuestion: { forest: "text-forest", collab: "text-collab" },
+          chaoticQuestion: { ai: "text-ai", migration: "text-migration" },
+          reflectQuestion: { nature: "text-nature", people: "text-people" },
+          imagineQuestion: {
+            afrofuturism: "text-afrofuturism",
+            "cli-fi": "text-cli-fi",
+          },
         };
 
-        const nextId = map[current]?.[answer];
-        if (nextId) document.getElementById(nextId).classList.add("active");
+        nextId = transitions[currentId]?.[answer];
+        if (nextId) {
+          document.getElementById(nextId).classList.add("active");
+        }
+      }
+
+      function restartAdventure() {
+        const all = document.querySelectorAll(".question");
+        all.forEach((el) => el.classList.remove("active"));
+        document.getElementById("question1").classList.add("active");
       }
     </script>
   </body>
